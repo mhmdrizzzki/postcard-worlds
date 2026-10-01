@@ -164,7 +164,7 @@ function drawSpots() {
   SPOTS.forEach((s) => {
     const b = document.createElement("button");
     b.className = "spot";
-    b.textContent = "→ " + s.label.replace(/^(through|along|out of) /, "");
+    b.textContent = s.label.replace(/^(through|along|out of) /, "");
     b.style.left = s.x + "%";
     b.style.top = s.y + "%";
     b.title = "Step " + s.label;
