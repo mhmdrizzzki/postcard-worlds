@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Postcard Worlds — step into a scene you typed</title>
+<meta name="description" content="Type a scene, then step through doors, paths and windows into the next generated view. Every postcard is drawn live by the Pollinations image API.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8F%9E%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Postcard Worlds</h1>
+  <p class="tag">Type a scene, then step through it — one postcard at a time. Every view is generated live with the <a href="https://gen.pollinations.ai/docs">Pollinations</a> image API.</p>
+</header>
+<main>
+  <section class="controls">
+    <input id="scene" placeholder="a lighthouse at dusk, wild sea" autocomplete="off" spellcheck="false">
+    <button id="go" class="primary">Step in</button>
+    <button id="surprise">Surprise me</button>
+    <button id="signin" class="ghost">Sign in with Pollinations</button>
+  </section>
+  <p id="status" class="status"></p>
+
+  <section id="stage" class="stage" hidden>
+    <div class="frame">
+      <img id="view" alt="the current view of your world">
+      <div id="spots" class="spots"></div>
+      <div id="loading" class="loading">drawing postcard…</div>
+    </div>
+    <div class="bar">
+      <span id="caption" class="caption"></span>
+      <span class="grow"></span>
+      <button id="back">← Back</button>
+      <button id="replay">Copy replay link</button>
+    </div>
+    <div class="trailwrap">
+      <span class="trailhead">Path so far</span>
+      <div id="trail" class="trail"></div>
+    </div>
+  </section>
+
+  <section class="hints">
+    <h2>How it works</h2>
+    <ul>
+      <li>Your scene is view 1, drawn with a fixed seed so the style stays steady.</li>
+      <li>Every view offers three ways on: a door, a path and a window.</li>
+      <li>The next postcard is drawn from the route you took, so the world keeps some coherence.</li>
+      <li>The breadcrumb trail and the replay link let you — or a friend — walk the same route again.</li>
+    </ul>
+  </section>
+</main>
+<script src="app.js" defer></script>
+</body>
+</html>
