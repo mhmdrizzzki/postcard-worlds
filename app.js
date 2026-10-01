@@ -244,7 +244,7 @@ function start(scene) {
   if (!token) { authStatus(); signIn(); return; }
   world = { scene: text, seed: 1 + Math.floor(Math.random() * 100000), route: [] };
   $("stage").hidden = false;
-  $("status").textContent = "Drawing your first postcard with the Pollinations image API (free tier, no sign-in needed).";
+  $("status").textContent = "Drawing your first postcard with your own Pollen — three ways on appear in a moment.";
   render();
 }
 
