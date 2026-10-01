@@ -164,7 +164,7 @@ function drawSpots() {
   SPOTS.forEach((s) => {
     const b = document.createElement("button");
     b.className = "spot";
-    b.textContent = s.icon + " " + s.label.replace(/^(through|along|out of) /, "");
+    b.textContent = "→ " + s.label.replace(/^(through|along|out of) /, "");
     b.style.left = s.x + "%";
     b.style.top = s.y + "%";
     b.title = "Step " + s.label;
@@ -216,6 +216,7 @@ function render() {
     $("loading").textContent = "could not draw this view (" + e.message + ") — try again";
   });
   $("caption").textContent = caption();
+  $("status").textContent = "View " + (world.route.length + 1) + " of your walk — drawn with your own Pollen.";
   $("back").disabled = world.route.length === 0;
   drawTrail();
   saveHash();
